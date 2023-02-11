@@ -5,10 +5,10 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-const conn = require('./backend/db/conn')
+const conn = require('./db/conn')
 conn();
 
-const routes = require('./backend/routes/router')
+const routes = require('./routes/router')
 
 app.use('/api', routes)
 

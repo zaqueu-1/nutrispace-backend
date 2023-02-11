@@ -1,37 +1,17 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express')
+const cors = require('cors')
+const app = express()
 
-var Router = require('../routes/router');
+app.use(cors())
+app.use(express.json())
 
-var app = express();
+const conn = require('../db/conn')
+conn();
 
-const whitelist = [
-  '*'
-];
+const routes = require('../routes/router')
 
-app.use((req, res, next) => {
-  const origin = req.get('referer');
-  const isWhitelisted = whitelist.find((w) => origin && origin.includes(w));
-  if (isWhitelisted) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type,Authorization');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-  }
-  // Pass to next layer of middleware
-  if (req.method === 'OPTIONS') res.sendStatus(200);
-  else next();
-});
+app.use('/api', routes)
 
-const setContext = (req, res, next) => {
-  if (!req.context) req.context = {};
-  next();
-};
-app.use(setContext);
-
-app.use('/', Router);
-
-module.exports = app;
+app.listen(3001, function() {
+    console.log('🪓')
+})
