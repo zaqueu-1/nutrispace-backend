@@ -12,6 +12,6 @@ const routes = require('./backend/routes/router')
 
 app.use('/api', routes)
 
-app.listen(9001, function() {
+app.listen(3001, function() {
     console.log('🪓')
 })
