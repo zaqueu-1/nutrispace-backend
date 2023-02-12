@@ -59,6 +59,10 @@ const patientSchema = new Schema ({
         type: Boolean,
         required: true
     },
+    createdBy: {
+        type: String,
+        required: true
+    },
 },
     { timestamps: true }
 );

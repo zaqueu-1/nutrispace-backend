@@ -4,24 +4,25 @@ const patientController = {
 
     create: async(req, res) => {
         try {
-            const patient = {
-                name: req.body.name,
-                gender: req.body.gender,
-                age: req.body.age,
-                weight: req.body.weight,
-                height: req.body.height,
-                drive: req.body.drive,
-                tel: req.body.tel,
-                email: req.body.email,
-                plan: req.body.plan,
-                start: req.body.start,
-                end: req.body.end,
-                feedback: req.body.feedback,
-                update: req.body.update,
-                active: req.body.active,
-            };
+            const {
+                name, 
+                gender, 
+                age, 
+                weight, 
+                height, 
+                drive, 
+                tel, 
+                email, 
+                plan, 
+                start, 
+                end, 
+                feedback, 
+                update, 
+                active,
+                createdBy,
+            } = req.body
 
-            const response = await PatientModel.create(patient);
+            const response = await PatientModel.create(req.body);
 
             res.status(201).json({ response, msg: 'Paciente cadastrado!' });
 
@@ -75,24 +76,25 @@ const patientController = {
         try {
             const id = req.params.id
 
-            const patient = {
-                name: req.body.name,
-                gender: req.body.gender,
-                age: req.body.age,
-                weight: req.body.weight,
-                height: req.body.height,
-                drive: req.body.drive,
-                tel: req.body.tel,
-                email: req.body.email,
-                plan: req.body.plan,
-                start: req.body.start,
-                end: req.body.end,
-                feedback: req.body.feedback,
-                update: req.body.update,
-                active: req.body.active,
-            };
+            const {
+                name, 
+                gender, 
+                age, 
+                weight, 
+                height, 
+                drive, 
+                tel, 
+                email, 
+                plan, 
+                start, 
+                end, 
+                feedback, 
+                update, 
+                active,
+                createdBy,
+            } = req.body
 
-            const updatedPatient = await PatientModel.findByIdAndUpdate(id, patient)
+            const updatedPatient = await PatientModel.findByIdAndUpdate(id, req.body)
 
             if(!updatedPatient) {
                 res.status(404).json({ msg: 'Paciente não encontrado.' });

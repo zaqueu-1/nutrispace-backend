@@ -1,8 +1,8 @@
-POST http://localhost:3001/api/patient
+POST http://localhost:9001/api/patient
 Content-Type: application/json
 
 {
-    "name": "Eduardo Zaqueu",
+    "name": "Teste Novo",
     "gender": "M",
     "age": 27,
     "weight": 88,
@@ -15,20 +15,49 @@ Content-Type: application/json
     "end": "2023-02-01",
     "feedback": "2023-02-01",
     "update": "2023-02-01",
-    "active": true
+    "active": true,
+    "createdBy": "bss.eduardo@yahoo.com.br"
 }
 
 ###
-GET http://localhost:3001/api/patient
+POST http://localhost:9001/api/user
+Content-Type: application/json
+
+{
+    "user": "zaqueu6",
+    "userEmail": "baaass.eduardo@yahoo.com.br",
+    "pass": "1234567"
+}
 
 ###
-GET http://localhost:3001/api/patient/63e54f4b29b5586e2ad12444
+POST http://localhost:9001/api/login
+Content-Type: application/json
+
+{
+    "userEmail": "baaass.eduardo@yahoo.com.br",
+    "pass": "1234567"
+}
 
 ###
-DELETE http://localhost:3001/api/patient/63e54f4b29b5586e2ad12444
+GET http://localhost:9001/api/patient
 
 ###
-PUT http://localhost:3001/api/patient/63e54f4b29b5586e2ad12444
+GET http://localhost:9001/api/user
+
+###
+GET http://localhost:9001/api/user/63e73c193bb9bf1d1e693e97
+
+###
+GET http://localhost:9001/api/patient/63e54f4b29b5586e2ad12444
+
+###
+DELETE http://localhost:9001/api/patient/63e54f4b29b5586e2ad12444
+
+###
+DELETE http://localhost:9001/api/user/63e54f4b29b5586e2ad12444
+
+###
+PUT http://localhost:9001/api/patient/63e54f4b29b5586e2ad12444
 Content-Type: application/json
 
 {
@@ -47,3 +76,14 @@ Content-Type: application/json
     "update": "2023-02-01",
     "active": true
 }
+
+###
+PUT http://localhost:9001/api/user/63e799093c4d688720de4c79
+Content-Type: application/json
+
+{
+    "user": "clarice",
+    "userEmail": "claricensc@hotmail.com",
+    "pass": "24266004Ab!"
+}
+
