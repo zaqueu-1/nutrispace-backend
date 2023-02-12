@@ -20,13 +20,13 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:9001/api/user
+POST https://nutrispace-backend.vercel.app/api/user
 Content-Type: application/json
 
 {
-    "user": "zaqueu6",
-    "userEmail": "baaass.eduardo@yahoo.com.br",
-    "pass": "1234567"
+    "user": "zaqueu",
+    "userEmail": "teste@teste.com",
+    "pass": "teste"
 }
 
 ###
