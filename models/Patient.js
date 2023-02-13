@@ -45,15 +45,15 @@ const patientSchema = new Schema ({
     },
     end: {
         type: Date,
-        required: true
+        required: false
     },
     feedback: {
         type: Date,
-        required: true
+        required: false
     },
     update: {
         type: Date,
-        required: true
+        required: false
     },
     active: {
         type: Boolean,
