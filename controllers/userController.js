@@ -3,16 +3,24 @@ const { User: UserModel } = require('../models/User')
 const userController = {
 
     create: async(req, res) => {
-        try {
-            const {user, userEmail, pass} = req.body
+        const emailInUse = await UserModel.findOne({ userEmail: req.body.userEmail })
 
-            const response = await UserModel.create(req.body);
-
-            res.status(201).json({ response, msg: 'Usuário cadastrado!' });
-
-        } catch (error) {
-            console.log(error)
+        if (emailInUse) {
+            return res.status(400).send('Email já cadastrado!')
+        } else {
+            try {
+                console.log(emailInUse)
+                const {user, userEmail, pass} = req.body
+    
+                const response = await UserModel.create(req.body);
+    
+                res.status(201).json({ response, msg: 'Usuário cadastrado!' });
+    
+            } catch (error) {
+                console.log(error)
+            }
         }
+
     },
     getAll: async (req, res) => {
         try {

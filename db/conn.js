@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 async function main() {
     try {
         mongoose.set('strictQuery', true)
-        await mongoose.connect('mongodb+srv://aereon01:qxicC8XnajEQ1Wvh@cluster0.yxbivzk.mongodb.net/?retryWrites=true&w=majority');
+        await mongoose.connect(process.env.MONGODB_URI);
         
         console.log('Conectado ao banco de dados!')
 

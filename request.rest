@@ -1,8 +1,8 @@
-POST http://localhost:9001/api/patient
+POST https://nutrispace-backend.vercel.app/api/patient
 Content-Type: application/json
 
 {
-    "name": "Teste Novo",
+    "name": "Eduardo Zaqueu",
     "gender": "M",
     "age": 27,
     "weight": 88,
@@ -16,7 +16,7 @@ Content-Type: application/json
     "feedback": "2023-02-01",
     "update": "2023-02-01",
     "active": true,
-    "createdBy": "bss.eduardo@yahoo.com.br"
+    "createdBy": "teste@teste.com"
 }
 
 ###

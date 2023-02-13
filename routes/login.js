@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const { User } = require('../models/User');
+const { User: UserModel } = require('../models/User')
 
 
 router.post('/login', async (req, res) => {
-    const user = await User.findOne({ userEmail: req.body.userEmail })
+    const user = await UserModel.findOne({ userEmail: req.body.userEmail })
 
     if (!user) {
         return res.status(400).send('Email ou senha incorretos!')
