@@ -6,7 +6,7 @@ const userController = {
         const emailInUse = await UserModel.findOne({ userEmail: req.body.userEmail })
 
         if (emailInUse) {
-            return res.status(400).send('Email já cadastrado!')
+            return res.status(422).json({ msg: 'Email já cadastrado!' })
         } else {
             try {
                 console.log(emailInUse)
