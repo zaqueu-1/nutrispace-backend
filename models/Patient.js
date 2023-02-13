@@ -37,7 +37,7 @@ const patientSchema = new Schema ({
     },
     plan: {
         type: String,
-        required: true
+        required: false
     },
     start: {
         type: Date,
