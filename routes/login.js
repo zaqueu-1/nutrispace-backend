@@ -5,6 +5,7 @@ const { User: UserModel } = require('../models/User')
 
 
 router.post('/login', async (req, res) => {
+    try {
     const user = await UserModel.findOne({ userEmail: req.body.userEmail })
 
     if (!user) {
@@ -19,8 +20,13 @@ router.post('/login', async (req, res) => {
 
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET)
 
-    res.header('auth-token', token).send(token)
+    res.set({
+        'auth-token': token,
+        'user-id': user._id
+      }).status(200).json({ token, userId: user._id })
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+      }
 })
         
-
 module.exports = router;

@@ -2,21 +2,21 @@ POST https://nutrispace-backend.vercel.app/api/patient
 Content-Type: application/json
 
 {
-    "name": "Eduardo Zaqueu",
-    "gender": "M",
-    "age": 27,
-    "weight": 88,
-    "height": 175,
-    "drive": "https://google.com",
-    "tel": 21989122887,
-    "email": "bss.eduardo@yahoo.com.br",
+    "name": "Sabryna Michaeli",
+    "gender": "F",
+    "age": 22,
+    "weight": 58,
+    "height": 161,
+    "drive": "https://drive.google.com/drive/folders/1zRXJOy8poJWHWnEbepODdyQ2zmAZcPhm",
+    "tel": 24981312611,
+    "email": "sabryna.michaeli06@gmail.com",
     "plan": "Mensal",
-    "start": "2023-02-01",
-    "end": "2023-02-01",
-    "feedback": "2023-02-01",
-    "update": "2023-02-01",
+    "start": "2021-03-16",
+    "end": "2023-03-16",
+    "feedback": "2023-03-06",
+    "update": "2023-03-10",
     "active": true,
-    "createdBy": "teste@teste.com"
+    "createdBy": "bss.eduardo@yahoo.com.br"
 }
 
 ###
@@ -93,6 +93,5 @@ Content-Type: application/json
 {
     "user": "clarice",
     "userEmail": "claricensc@hotmail.com",
-    "pass": "24266004Ab!"
 }
 
